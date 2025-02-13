@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* กำหนดให้ทุกกล่องใช้ขนาดเท่ากัน โดยไม่คำนึงถึง margin หรือ padding */
+}
+
+/* กำหนด Font ของตัวอักษร */
+body {
+  font-family: "Fira Code", "JetBrains Mono", "IBM Plex Mono", monospace; /* ใช้ฟอนต์ monospaced */
+  transition: font-size 0.5s ease; /* ทำให้การเปลี่ยนขนาดตัวอักษรมีความสมูท */
+}
+
+/* กำหนดสไตล์ของคอนเทนเนอร์ให้เป็น Navigation Bar */
+nav {
+  position: fixed; /* ติดแถบนำทางที่ด้านบนของหน้า */
+  top: 0; /* ตำแหน่งอยู่ที่ด้านบนสุด */
+  left: 0; /* ตำแหน่งอยู่ที่ด้านซ้ายสุด */
+  width: 100%; /* กำหนดความกว้างของแถบเมนูให้เต็มหน้าจอ */
+  background-color: rgb(0, 0, 0); /* เปลี่ยนพื้นหลังเป็นสีขาว */
+  height: 60px; /* กำหนดความสูงของ Navigation Bar */
+  z-index: 1000; /* ให้แถบนำทางอยู่ด้านบนสุด */
+  display: flex; /* ใช้ Flexbox เพื่อจัดการตำแหน่งของรายการในแถบเมนู */
+  justify-content: space-evenly; /* จัดตำแหน่งรายการเมนูให้ห่างกัน */
+  align-items: center; /* จัดรายการให้อยู่กลางแนวตั้ง */
+  border-bottom: 1px solid rgb(1, 1, 31);
+}
+.nav-container {
+  display: flex;
+  justify-content: space-evenly; /* จัดตำแหน่งรายการเมนูให้ห่างกัน */
+  align-items: center; /* จัดรายการให้อยู่กลางแนวตั้ง */
+  background-color: #ffffff; /* กำหนดพื้นหลังเป็นสีเทาเข้ม */
+  width: 100%; /* กำหนดความกว้างของแถบเมนูให้เต็มหน้าจอ */
+}
+#supanut {
+  font-size: 30px; /* ทำให้ตัวอักษรใหญ่ขึ้น */
+  color: rgb(29, 43, 240); /* เปลี่ยนสีตัวอักษรเป็นสีม่วง */
+  font-weight: bold; /* ทำให้ตัวอักษรหนา */
+  padding-left: 40px; /* เพิ่มระยะห่างทางซ้าย */
+}
+nav a {
+  color: gray; /* เปลี่ยนสีตัวอักษรเป็นสีเทา */
+  text-decoration: none; /* เอาเส้นใต้ในเมนูออก */
+  margin: 0 20px; /* กำหนดระยะห่างระหว่างรายการ */
+  font-size: 16px; /* กำหนดขนาดตัวอักษร */
+  font-weight: bold;
+}
+.nav-links {
+  display: flex; /* ใช้ Flexbox สำหรับเมนู */
+}
+.menu-icon {
+  display: none; /* ซ่อนไอคอน hamburger ในหน้าจอใหญ่ */
+}
+
+@media screen and (max-width: 1100px) {
+  nav a {
+    color: gray; /* เปลี่ยนสีตัวอักษรเป็นสีเทา */
+    text-decoration: none; /* เอาเส้นใต้ในเมนูออก */
+    margin: 0px; /* กำหนดระยะห่างระหว่างรายการ */
+    padding: 0px 10px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .nav-links {
+    display: none; /* ซ่อนเมนูเมื่อหน้าจอมีขนาดเล็กกว่า 800px */
+  }
+  #supanut {
+    display: inline-block;
+  }
+  .menu-icon {
+    display: inline-block; /* แสดงไอคอน hamburger เมื่อหน้าจอเล็กกว่า 800px */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เมื่อเอาเมาส์ไปวางที่ไอคอน */
+    font-size: 30px; /* ขนาดไอคอน */
+    color: gray; /* เปลี่ยนสีตัวอักษรเป็นสีเทา */
+  }
+  .nav-container-box1 {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
